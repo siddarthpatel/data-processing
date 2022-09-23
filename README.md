@@ -20,7 +20,7 @@ Apache kakfa is a high throughput distrubted messaging system. It is primarily u
 
 ![Alt text](/assets/kafka.png)
 
-- You can have any streams of data in kafka. Such as website events, pricing data, financial transactions, user interactions. Once the data is in it can be read or put into any system you like such as a database.
+- You can have any streams of data in kafka. Such as website events, pricing data, financial transactions, user interactions. Once the data is in it can be read or put into any system you like such as a database. Ideally you would want to use an event processing tool in this case such as Flink that would run a scipt in real time to read data.
 
 ![Alt text](/assets/kafka-ex.png)
 
