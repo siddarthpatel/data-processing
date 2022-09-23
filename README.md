@@ -46,5 +46,5 @@ Apache kakfa is a high throughput distrubted messaging system. It is primarily u
 - **Netflix** uses Kafka to apply recommendations in real-time while you're watching TV shows. 
 - **UBER** uses Kafka gathers user, taxi and trip data in real time to computer and forecast demand, and compute surge prices in real-time.
 - **LinkedIn** uses Kafka to prevent spam, collect user interactions to make better connection recommendations in real-time.
-- *All of the above uses cases are achieved by applying Event processing (ex. Flink) on the streamed data and use ETL to store it in a target system. From there have some machine learning applied and in the end have an APIs that would expose this data to the client*
+- *All of the above uses cases are achieved by applying Event processing (ex. Flink) on the streamed data and use ETL to store it in a target system. Use of machine learning alogrithms on the user data to provide recomendations and in the end have APIs that would expose this data to the client.*
 
