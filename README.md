@@ -1,15 +1,15 @@
 # data-processing
 An introduction to data streaming/processing platforms (Kafka/Flink)
 
-### Setup Kafka and run its container:
+## [Setup Kafka and run its container](/kafka-setup/usage.md)
 ```
 ./kafka-setup/setup.sh
 ```
 
-## [Kafka:](/kafka-setup/usage.md)
+## Kafka
 Apache kakfa is a high throughput distrubted messaging system. It is primarily used to build real-time streaming data pipelines and applications that adapt to the data streams. It combines messaging, storage, and stream processing to allow storage and analysis of both historical and real-time data. All in all Kafka is simply used as a transportation mechanism which can be thought of as a river where streams of data are written.
 
-### Overview:
+### Overview
 
 - **Let's say a company has a simple architecture involving 1 source and 1 target system. Sharing data i.e. writing data from source to target is a simple, fast, and an inexpesive operation.**
 
@@ -38,7 +38,7 @@ Apache kakfa is a high throughput distrubted messaging system. It is primarily u
 3) High performance  with latency of less that 10ms making it real time.
 4) Used by 2000+ firms, 35% of which are fortune 500.
 
-## Use cases:
+## Use cases
 - Messaging system
 - Activity gathering
 - Gather metrics from many different locations
@@ -47,7 +47,7 @@ Apache kakfa is a high throughput distrubted messaging system. It is primarily u
 - De-coupling of system dependencies
 - Integration with tools like Spark, Flink (*event processing of stremed data*), Hadoop (*map reduce*), and many other Big Data technologies.
 
-## Real world use cases:
+## Real world use cases
 - **Netflix** uses Kafka to apply recommendations in real-time while you're watching TV shows. 
 - **UBER** uses Kafka gathers user, taxi and trip data in real time to computer and forecast demand, and compute surge prices in real-time.
 - **LinkedIn** uses Kafka to prevent spam, collect user interactions to make better connection recommendations in real-time.
