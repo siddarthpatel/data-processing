@@ -26,6 +26,8 @@ docker exec -it kafka /bin/sh
 All Kafka shell scripts are located in `/opt/kafka_<version>/bin`
 
 **Here’s the command you’ll have to issue to create a Kafka topic**
+
+- `Note: You can either use --bootstrap-server kafka/localhost:9092 or --zookeeper zookeeper:2181`
 ```
 kafka-topics.sh --create --topic kafka_learning --replication-factor 1 --partitions 1 --bootstrap-server kafka:9092
 ```
