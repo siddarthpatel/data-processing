@@ -27,7 +27,7 @@ All Kafka shell scripts are located in `/opt/kafka_<version>/bin`
 
 **Here’s the command you’ll have to issue to create a Kafka topic**
 ```
-kafka-topics.sh --create --zookeeper zookeeper:2181 --replication-factor 1 --partitions 1 --topic kafka_learning
+kafka-topics.sh --create --topic kafka_learning --replication-factor 1 --partitions 1 --bootstrap-server kafka:9092
 ```
 Where `kafka_learning` is the name of your topic. Since this is a dummy environment, you can keep replication-factor and partitions at 1. And that’s it.The topic will be created after a second or so. 
 
@@ -39,7 +39,7 @@ kafka-topics.sh --list --zookeeper zookeeper:2181
 **Describe a topic**
 
 ```
-kafka-topics.sh --describe --zookeeper zookeeper:2181 --topic kafka_learning
+kafka-topics.sh --describe --topic kafka_learning --zookeeper zookeeper:2181
 
 Topic: kafka_learning	TopicId: eDracljQTD6nX4phmsFXSw	PartitionCount: 1	ReplicationFactor: 1	Configs:
 	Topic: kafka_learning	Partition: 0	Leader: 1001	Replicas: 1001	Isr: 1001
@@ -48,7 +48,7 @@ Topic: kafka_learning	TopicId: eDracljQTD6nX4phmsFXSw	PartitionCount: 1	Replicat
 **Delete a topic**
 
 ```
-kafka-topics.sh --delete --zookeeper zookeeper:2181 --topic kafka_learning
+kafka-topics.sh --delete --topic kafka_learning --zookeeper zookeeper:2181
 ```
 
 ### Using producers and consumers from shell
@@ -62,7 +62,7 @@ Create a kafka topic called messages
 Using `kafka-console-producer.sh` to write messages into our `broker-list` `kafka:9092` for the topic `messages`. This opens a shell console and lets us write our data. Close the shell after writing
 
 ```
-kafka-console-producer.sh --broker-list kafka:9092 --topic messages
+kafka-console-producer.sh --topic messages --bootstrap-server kafka:9092 
 >{'user_id': 1, 'recipient_id': 2, 'message': 'Hi'}
 >{'user_id': 2, 'reciepient_id': 1, 'message': 'Hello there'}
 ```
@@ -70,7 +70,7 @@ kafka-console-producer.sh --broker-list kafka:9092 --topic messages
 Open a new terminal window and exec into your kafka container to verify this. We use `kafka-console-consumer.sh` to consume the messages through the `bootstrap-server` with the `--from-beginning` flag to list all messages
 
 ```
-kafka-console-consumer.sh --bootstrap-server kafka:9092 --topic messages --from-beginning
+kafka-console-consumer.sh --topic messages --bootstrap-server kafka:9092 --from-beginning
 {'user_id': 1, 'recipient_id': 2, 'message': 'Hi'}
 {'user_id': 2, 'reciepient_id': 1, 'message': 'Hello there'}
 ```
