@@ -5,7 +5,7 @@
 - **Kafka consumer**: *Application or piece of code you write to read data from kafka*
 - **Zookeeper**: *It is used to track the status of your kafka cluster such as: status of nodes, maintain a list of topics and messages*
 
-## [Running the kafka and zookeeper container](https://kafka.apache.org/documentation/#quickstart):
+## [Running the kafka and zookeeper container](https://kafka.apache.org/documentation/#quickstart)
 Use docker compose to spin up containers that will run zookeeper and kafka. We use open source images for kafka and zookeeper setup so that we dont have explicity install all the components and tools required for kafka to run. It can be a pain the a**. The -d means both Zookeeper and Kafka will run in the background, so you’ll have access to the Terminal after they start.
 ```
 docker-compose -f docker-compose.yml up -d
