@@ -2,20 +2,23 @@
 An introduction to data streaming/processing platforms (Kafka/Flink)
 
 ## Quick Start
+### Pre reqs (pythyon3 and pip)
 1) [Setup Kafka and run its container](/kafka-setup/usage.md)
 ```
 ./kafka-setup/setup.sh
 ```
 2) [Create a kafka topic called messages](https://github.com/siddarthpatel/data-processing/blob/main/kafka-setup/usage.md#creating-a-kafka-topic-and-connecting-to-a-kafka-shell)
 
-3) Setup Kafka in python
+3) Setup Kafka for python
 ```
 ./kafka-in-python/setup.sh
 ```
 
-4) Run producer/consumer script in python in separate terminal windows
+4) Run producer/consumer python scripts in separate terminal windows
 ```
 python3 kafka-in-python/producer.py
+```
+```
 python3 kafka-in-python/consumer.py
 ```
 - Output
