@@ -2,7 +2,7 @@
 An introduction to data streaming/processing platforms (Kafka/Flink)
 
 ## Quick Start
-### Pre reqs (pythyon3 and pip)
+### Pre-reqs (pythyon3 and pip)
 1) [Setup Kafka and run its container](/kafka-setup/usage.md)
 ```
 ./kafka-setup/setup.sh
