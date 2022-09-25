@@ -1,10 +1,16 @@
 # data-processing
 An introduction to data streaming/processing platforms (Kafka/Flink)
 
-## [Setup Kafka and run its container](/kafka-setup/usage.md)
+## Quick Start
+1) ### [Setup Kafka and run its container](/kafka-setup/usage.md)
 ```
 ./kafka-setup/setup.sh
 ```
+2) ### Setup Kafka in python
+```
+./kafka-in-python/setup.sh
+```
+3) ### [Create a kafka topic called messages](https://github.com/siddarthpatel/data-processing/blob/main/kafka-setup/usage.md#creating-a-kafka-topic-and-connecting-to-a-kafka-shell)
 
 ## [Kafka](https://kafka.apache.org/documentation/#quickstart)
 Apache kakfa is a high throughput distrubted messaging system. It is primarily used to build real-time streaming data pipelines and applications that adapt to the data streams. It combines messaging, storage, and stream processing to allow storage and analysis of both historical and real-time data. All in all Kafka is simply used as a transportation mechanism which can be thought of as a river where streams of data are written.
