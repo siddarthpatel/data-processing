@@ -23,3 +23,5 @@ def generate_message() -> dict:
         'message': message
     }
 
+if __name__ == '__main__':
+    print(generate_message())
