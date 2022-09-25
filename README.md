@@ -2,13 +2,13 @@
 An introduction to data streaming/processing platforms (Kafka/Flink)
 
 ## Quick Start
-1) ### [Setup Kafka and run its container](/kafka-setup/usage.md)
+1) [Setup Kafka and run its container](/kafka-setup/usage.md)
 ```
 ./kafka-setup/setup.sh
 ```
-2) ### [Create a kafka topic called messages](https://github.com/siddarthpatel/data-processing/blob/main/kafka-setup/usage.md#creating-a-kafka-topic-and-connecting-to-a-kafka-shell)
+2) [Create a kafka topic called messages](https://github.com/siddarthpatel/data-processing/blob/main/kafka-setup/usage.md#creating-a-kafka-topic-and-connecting-to-a-kafka-shell)
 
-3) ### Setup Kafka in python
+3) Setup Kafka in python
 ```
 ./kafka-in-python/setup.sh
 ```
