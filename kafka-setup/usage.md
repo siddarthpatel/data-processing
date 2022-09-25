@@ -17,7 +17,7 @@ docker ps
 
 ![Alt text](/assets/docker-desktop.png)
 
-## Creating a kafka topic:
+## Creating a kafka topic and connecting to a kafka shell:
 Once Zookeeper and Kafka containers are running, you can execute the following Terminal command to start a Kafka shell
 ```
 docker exec -it kafka /bin/sh
@@ -25,12 +25,56 @@ docker exec -it kafka /bin/sh
 
 All Kafka shell scripts are located in `/opt/kafka_<version>/bin`
 
-Here’s the command you’ll have to issue to create a Kafka topic:
+**Here’s the command you’ll have to issue to create a Kafka topic**
 ```
 kafka-topics.sh --create --zookeeper zookeeper:2181 --replication-factor 1 --partitions 1 --topic kafka_learning
 ```
-Where first_kafka_topic is the name of your topic. Since this is a dummy environment, you can keep replication-factor and partitions at 1. And that’s it.The topic will be created after a second or so. You can list all Kafka topics with the following command:
+Where `kafka_learning` is the name of your topic. Since this is a dummy environment, you can keep replication-factor and partitions at 1. And that’s it.The topic will be created after a second or so. 
+
+**You can list all Kafka topics with the following command**
 
 ```
 kafka-topics.sh --list --zookeeper zookeeper:2181
 ```
+**Describe a topic**
+
+```
+kafka-topics.sh --describe --zookeeper zookeeper:2181 --topic kafka_learning
+
+Topic: kafka_learning	TopicId: eDracljQTD6nX4phmsFXSw	PartitionCount: 1	ReplicationFactor: 1	Configs:
+	Topic: kafka_learning	Partition: 0	Leader: 1001	Replicas: 1001	Isr: 1001
+```
+
+**Delete a topic**
+
+```
+kafka-topics.sh --delete --zookeeper zookeeper:2181 --topic kafka_learning
+```
+
+### Using producers and consumers from shell
+
+Create a kafka topic called messages
+
+```
+ kafka-topics.sh --create --zookeeper zookeeper:2181 --replication-factor 1 --partitions 1 --topic messages
+```
+
+Using `kafka-console-producer.sh` to write messages into our `broker-list` `kafka:9092` for the topic `messages`. This opens a shell console and lets us write our data. Close the shell after writing
+
+```
+kafka-console-producer.sh --broker-list kafka:9092 --topic messages
+>{'user_id': 1, 'recipient_id': 2, 'message': 'Hi'}
+>{'user_id': 2, 'reciepient_id': 1, 'message': 'Hello there'}
+```
+
+Open a new terminal window and exec into your kafka container to verify this. We use `kafka-console-consumer.sh` to consume the messages through the `bootstrap-server` with the `--from-beginning` flag to list all messages
+
+```
+kafka-console-consumer.sh --bootstrap-server kafka:9092 --topic messages --from-beginning
+{'user_id': 1, 'recipient_id': 2, 'message': 'Hi'}
+{'user_id': 2, 'reciepient_id': 1, 'message': 'Hello there'}
+```
+
+Without the `--from-beginning` flag you must have the producers and consumer shells running in separate terminals to write/read messages in real time. 
+
+![Alt text](/assets/producer-consumer.png)
