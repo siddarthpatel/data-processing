@@ -1,4 +1,4 @@
-## [Concepts and tools used:](https://towardsdatascience.com/how-to-install-apache-kafka-using-docker-the-easy-way-4ceb00817d8b)
+## [Concepts and tools used](https://towardsdatascience.com/how-to-install-apache-kafka-using-docker-the-easy-way-4ceb00817d8b)
 - **Kafka cluster and brokers**: *Each kafka cluster is made of brokers. Each broker handles producers/consumers and keeps data replicated in the cluster*
 - **Kafka topic**: *Category where records are published*
 - **Kafka producer**: *Application or piece of code you write to write data into kafka*
@@ -17,7 +17,7 @@ docker ps
 
 ![Alt text](/assets/docker-desktop.png)
 
-## Creating a kafka topic and connecting to a kafka shell:
+## Creating a kafka topic and connecting to a kafka shell
 Once Zookeeper and Kafka containers are running, you can execute the following Terminal command to start a Kafka shell
 ```
 docker exec -it kafka /bin/sh
