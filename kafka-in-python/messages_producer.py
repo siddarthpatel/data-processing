@@ -2,7 +2,7 @@ import time
 import json 
 import random 
 from datetime import datetime
-from data_generator import generate_message
+from messages_data_generator import generate_message
 from kafka import KafkaProducer
 
 
