@@ -21,7 +21,7 @@ python3 kafka-in-python/messages_producer.py
 ```
 python3 kafka-in-python/messages_consumer.py
 ```
-- Output
+- Output:
 ![Alt text](/assets/kafka-in-python.png)
 
 ## [Kafka](https://kafka.apache.org/documentation/#quickstart)
