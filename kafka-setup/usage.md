@@ -31,7 +31,7 @@ All Kafka shell scripts are located in `/opt/kafka_<version>/bin`
 ```
 kafka-topics.sh --create --topic kafka_learning --replication-factor 1 --partitions 1 --bootstrap-server kafka:9092
 ```
-Where `kafka_learning` is the name of your topic. Since this is a dummy environment, you can keep replication-factor and partitions at 1. And that’s it.The topic will be created after a second or so. 
+Where `kafka_learning` is the name of your topic. Since this is a dummy environment, you can keep replication-factor and partitions at 1. 
 
 **You can list all Kafka topics with the following command**
 
