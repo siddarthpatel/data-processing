@@ -24,7 +24,7 @@ python3 kafka-in-python/messages_consumer.py
 - Output:
 ![Alt text](/assets/kafka-pc-in-python.png)
 
-## [Kafka](https://kafka.apache.org/documentation/#quickstart)
+## [Kafka](https://kafka.apache.org/documentation)
 Apache kakfa is a high throughput distrubted messaging system. It is primarily used to build real-time streaming data pipelines and applications that adapt to the data streams. It combines messaging, storage, and stream processing to allow storage and analysis of both historical and real-time data. All in all Kafka is simply used as a transportation mechanism which can be thought of as a river where streams of data are written.
 
 ### Overview

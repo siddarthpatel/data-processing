@@ -1,4 +1,4 @@
-## [Concepts and tools used](https://towardsdatascience.com/how-to-install-apache-kafka-using-docker-the-easy-way-4ceb00817d8b)
+## Concepts and tools used
 - **Kafka cluster and brokers**: *Each kafka cluster is made of brokers. Each broker handles producers/consumers and keeps data replicated in the cluster*
 - **Kafka topic**: *Category where records are published*
 - **Kafka producer**: *Application or piece of code you write to write data into kafka*
