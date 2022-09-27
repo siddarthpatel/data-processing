@@ -9,7 +9,7 @@ An introduction to data streaming/processing platforms (Kafka/Flink)
 ```
 2) [Create a kafka topic called `messages`](https://github.com/siddarthpatel/data-processing/blob/main/kafka-setup/usage.md#creating-a-kafka-topic-and-connecting-to-a-kafka-shell)
 
-3) Setup Kafka for python
+3) Setup [kafka-python](https://kafka-python.readthedocs.io/en/master/)
 ```
 ./kafka-in-python/setup.sh
 ```
