@@ -31,7 +31,7 @@ All Kafka shell scripts are located in `/opt/kafka_<version>/bin`
 ```
 kafka-topics.sh --create --topic kafka_learning --replication-factor 1 --partitions 1 --bootstrap-server kafka:9092
 ```
-Where `kafka_learning` is the name of your topic. Since this is a dummy environment, you can keep replication-factor and partitions at 1. 
+Where `kafka_learning` is the name of your topic. Since this is a dummy environment, you can keep replication-factor and [partitions](https://medium.com/event-driven-utopia/understanding-kafka-topic-partitions-ae40f80552e8#:~:text=Partitions%20are%20the%20way%20that,particular%20topic%20across%20multiple%20brokers.) at 1. 
 
 **You can list all Kafka topics with the following command**
 
@@ -61,7 +61,7 @@ Create a kafka topic called messages
  kafka-topics.sh --create --zookeeper zookeeper:2181 --replication-factor 1 --partitions 1 --topic messages
 ```
 
-Using `kafka-console-producer.sh` to write messages into our `broker-list` `kafka:9092` for the topic `messages`. This opens a shell console and lets us write our data. Close the shell after writing
+Using `kafka-console-producer.sh` to write messages into our `broker` `kafka:9092` for the topic `messages`. This opens a shell console and lets us write our data. Close the shell after writing
 
 ```
 kafka-console-producer.sh --topic messages --bootstrap-server kafka:9092 
@@ -69,7 +69,7 @@ kafka-console-producer.sh --topic messages --bootstrap-server kafka:9092
 >{'user_id': 2, 'reciepient_id': 1, 'message': 'Hello there'}
 ```
 
-Open a new terminal window and exec into your kafka container to verify this. We use `kafka-console-consumer.sh` to consume the messages through the `bootstrap-server` with the `--from-beginning` flag to list all messages
+Open a new terminal window and exec into your kafka container to verify this. We use `kafka-console-consumer.sh` to consume the messages in the `broker` with the `--from-beginning` flag to list all messages
 
 ```
 kafka-console-consumer.sh --topic messages --bootstrap-server kafka:9092 --from-beginning
