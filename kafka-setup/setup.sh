@@ -31,6 +31,9 @@ fi
 # create topic with 5 partitions across 3 kafka brokers
 # kafka-topics --create --topic kafka_learning --replication-factor 1 --partitions 5 --bootstrap-server localhost:19092,localhost:29092,localhost:39092
 
+# list kafka topics on different brokers
+# kafka-topics --list --bootstrap-server localhost:39092,localhost:29092,localhost:39092
+
 # start producer to write into any of the 3 kafka brokers
 # kafka-console-producer --topic kafka_learning --bootstrap-server localhost:19092,localhost:29092,localhost:39092
 
