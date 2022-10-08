@@ -15,6 +15,7 @@ An introduction to data streaming/processing platforms (Kafka/Flink)
 ```
 
 4) Run producer/consumer python scripts in separate terminal windows
+- *Specify single or multi as an argument depending on the number of brokers configured*
 ```
 python3 kafka-in-python/messages_producer.py single
 ```

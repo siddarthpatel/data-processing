@@ -55,10 +55,20 @@ kafka-topics.sh --delete --topic kafka_learning --zookeeper zookeeper:2181
 
 ### Using producers and consumers from shell
 
-Create a kafka topic called messages
+Create a kafka topic called messages (single broker)
 
 ```
- kafka-topics.sh --create --zookeeper zookeeper:2181 --replication-factor 1 --partitions 1 --topic messages
+ kafka-topics.sh --create --topic messages --replication-factor 1 --partitions 1 --bootstrap-server kafka:9092 
+```
+
+Create a kafka topic called messages (multiple brokers)
+```
+kafka-topics --create --topic messages --replication-factor 1 --partitions 5 --bootstrap-server localhost:19092,localhost:29092,localhost:39092
+```
+
+List number of brokers with ids (multiple brokers)
+```
+zookeeper-shell localhost:22181 ls /brokers/ids
 ```
 
 Using `kafka-console-producer.sh` to write messages into our `broker` `kafka:9092` for the topic `messages`. This opens a shell console and lets us write our data. Close the shell after writing
