@@ -3,6 +3,7 @@ import json
 import random 
 from datetime import datetime
 from messages_data_generator import generate_message
+import sys
 from kafka import KafkaProducer
 
 
@@ -11,14 +12,21 @@ def serializer(message):
     return json.dumps(message).encode('utf-8')
 
 
-# Kafka Producer
-producer = KafkaProducer(
-    bootstrap_servers=['localhost:9092'],
-    value_serializer=serializer
-)
-
-
 if __name__ == '__main__':
+    # Kafka Producer
+    if (sys.argv and sys.argv[1] == 'single'):
+        producer = KafkaProducer(
+            bootstrap_servers=['localhost:9092'],
+            value_serializer=serializer
+        )
+    elif (sys.argv and sys.argv[1] == 'multi'):
+        producer = KafkaProducer(
+            bootstrap_servers=['localhost:19092, localhost:29092, localhost:39092'],
+            value_serializer=serializer
+        )
+    else:
+        print("Please specify arch type as single or multi")
+        quit(1)
     # Infinite loop - runs until you kill the program
     while True:
         # Generate a message

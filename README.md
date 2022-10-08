@@ -7,7 +7,7 @@ An introduction to data streaming/processing platforms (Kafka/Flink)
 ```
 ./kafka-setup/setup.sh
 ```
-2) [Create a kafka topic called `messages`](https://github.com/siddarthpatel/data-processing/blob/main/kafka-setup/usage.md#creating-a-kafka-topic-and-connecting-to-a-kafka-shell)
+2) [Create a kafka topic called `messages`](https://github.com/siddarthpatel/data-processing/blob/main/kafka-setup/usage.md#using-producers-and-consumers-from-shell)
 
 3) Setup [kafka-python](https://kafka-python.readthedocs.io/en/master/)
 ```
@@ -16,10 +16,10 @@ An introduction to data streaming/processing platforms (Kafka/Flink)
 
 4) Run producer/consumer python scripts in separate terminal windows
 ```
-python3 kafka-in-python/messages_producer.py
+python3 kafka-in-python/messages_producer.py single
 ```
 ```
-python3 kafka-in-python/messages_consumer.py
+python3 kafka-in-python/messages_consumer.py single
 ```
 - Output:
 ![Alt text](/assets/kafka-pc-in-python.png)
