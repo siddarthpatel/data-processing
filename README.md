@@ -1,11 +1,12 @@
 # data-processing
 An introduction to data streaming/processing platforms (Kafka/Flink)
 
-## Quick start single broker kafka cluster
+## Quick start
 ### Pre-reqs (pythyon3 and pip)
 1) [Setup Kafka and run its container](/kafka-setup/usage.md)
 ```
 ./kafka-setup/setup.sh
+- *Specify single or multi as an input depending on the number of brokers configured*
 ```
 2) [Create a kafka topic called `messages`](https://github.com/siddarthpatel/data-processing/blob/main/kafka-setup/usage.md#using-producers-and-consumers-from-shell)
 
