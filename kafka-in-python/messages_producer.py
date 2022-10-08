@@ -21,7 +21,7 @@ if __name__ == '__main__':
         )
     elif (sys.argv and sys.argv[1] == 'multi'):
         producer = KafkaProducer(
-            bootstrap_servers=['localhost:19092, localhost:29092, localhost:39092'],
+            bootstrap_servers=['localhost:19092', 'localhost:29092', 'localhost:39092'],
             value_serializer=serializer
         )
     else:
