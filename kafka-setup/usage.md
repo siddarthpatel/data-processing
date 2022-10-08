@@ -56,12 +56,21 @@ kafka-topics.sh --delete --topic kafka_learning --zookeeper zookeeper:2181
 ### Using producers and consumers from shell
 
 Create a kafka topic called messages (single broker)
-
+- exec into broker
+```
+docker exec -it kafka /bin/sh
+```
+- create a topic
 ```
  kafka-topics.sh --create --topic messages --replication-factor 1 --partitions 1 --bootstrap-server kafka:9092 
 ```
 
 Create a kafka topic called messages (multiple brokers)
+- exec into one of the brokers
+```
+docker exec -it data-processing-kafka-1-1 /bin/sh
+```
+- create topic
 ```
 kafka-topics --create --topic messages --replication-factor 1 --partitions 5 --bootstrap-server localhost:19092,localhost:29092,localhost:39092
 ```
