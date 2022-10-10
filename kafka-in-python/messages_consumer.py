@@ -15,6 +15,7 @@ if __name__ == '__main__':
         consumer = KafkaConsumer(
             'messages',
             bootstrap_servers=['localhost:19092', 'localhost:29092', 'localhost:39092'],
+            api_version = (0, 11, 5),
             auto_offset_reset='earliest'
         )
     else:
